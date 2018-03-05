@@ -1,8 +1,9 @@
 function solver (string1, string2) {
   let input1, input2, countDays = 0
-  input1 = [string1].map(inputModify)
-  input2 = [string2].map(inputModify)
-  while (!(input1[0] === input2[0] && input1[1] === input2[1] && input1[2] === input2[2])){
+  //[input1, input2] = [string1, string2].map(inputModify)
+  input1 = inputModify(string1)
+  input2 = inputModify(string2)
+  while (!((input1[0] === input2[0]) && (input1[1] === input2[1]) && (input1[2] === input2[2]))){
   	countDays++
   	input1 = incrementor(input1)
   }
@@ -14,18 +15,6 @@ function inputModify (string) {
 }
 
 //console.log(daysBetween([16,04,1991], [17,12,1991]))
-
-/*function daysBetween (array1, array2, count = 0) {
-	 if (compareDay(array1, array2)){
-	 	return incrementDay(array1, array2, count) 
-	 }
-	 if (compareMonth(array1, array2)){
-	 	return incrementMonth(array1, array2, count)
-	 }
-	 if compareYear(array1, array2){
-	 	return incrementYear(array1, array2, count)
-	 }
-}*/
 
 function incrementor(array) {
 	if (array[1] === 12 && array[0] === 31){
@@ -62,7 +51,7 @@ function isLeapYear(array) {
 }
 
 
-//console.log(solver('31122017', '02012018'))
+//console.log(solver('25051996', '05032018'))
 //console.log(incrementor([29, 2, 2000]))
 /*function incrementMonth(array1, array2, count) {
 	// body...
